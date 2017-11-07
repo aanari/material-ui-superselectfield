@@ -358,7 +358,7 @@ class SelectField extends Component {
       const updatedValues = selectedItemExists
         ? selectedItems.filter(obj => !areEqual(obj.value, selectedItem.value))
         : selectedItems.concat(selectedItem)
-      this.setState({ selectedItems: updatedValues }, () => this.closeMenu())
+      this.setState({ selectedItems: updatedValues }, () => this.closeMenu('Multiselection'))
       this.clearTextField(() => this.focusTextField())
     } else {
       const updatedValue = areEqual(selectedItems, selectedItem) ? null : selectedItem
